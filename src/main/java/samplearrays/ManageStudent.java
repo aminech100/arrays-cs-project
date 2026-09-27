@@ -105,6 +105,39 @@ public class ManageStudent {
         return newArray;
     }
 
+    //11)
+    public static void SchoolRepresentation(){
+        Student[][] school = new Student[2][3];
+
+        school[0][0] = new Student(1, "Amine", 19,14);
+        school[0][1] = new Student(2, "Ahmed", 20,17);
+        school[0][2] = new Student(3, "Rayan", 21,13);
+        school[1][0] = new Student(4, "Ayman", 20,15);
+        school[1][1] = new Student(5, "Ilyass", 19,11);
+        school[1][2] = new Student(6, "Aya", 22,9);
+
+        for (int i=0; i<school.length; i++){
+            System.out.println("Class :" + (i+1));
+            for (int j=0; j<school[i].length; j++){
+                System.out.println("Student : " + school[i][j].getName());
+            }
+        }
+
+        System.out.println("Top Students per class");
+        for (int i=0; i<school.length; i++){
+            Student topStud = school[i][0];
+            for (int j=1; j<school[i].length; j++){
+                if (school[i][j].getGrade() > topStud.getGrade()){
+                    topStud = school[i][j];
+                }
+            }
+            System.out.println("Top Student of Class " + (i+1) + " is: " + topStud.getName() + " with grade: " + topStud.getGrade());
+        }
+
+    }
+
+
+
     // 1) Create an Array of Students + demos for all tasks
     public static void main(String[] args) {
         // Create & initialize array of 5 students
